@@ -1,5 +1,8 @@
 ﻿@charset:"UTF-8";
-/* Last Modified 2020.12.11-0 */
+/* ============================================
+   Last Modified 2021.09.24
+   Script Version Ver2.07d
+============================================ */
 html, body
 {
     height: 100%;
@@ -10,12 +13,18 @@ html
 {
   touch-action: manipulation;
 }
-
+body
+{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
 body, section.html_page
 {
     background-color: #888;
     padding: 0;
     margin: 0;
+    overflow: visible;
     text-align: left;
     vertical-align: middle;
     font-family: "UD デジタル 教科書体 NP-R", "UD Digi Kyokasho NP-R", "Meiryo UI" , Meiryo, "Hiragino Kaku Gothic Pro";
@@ -29,6 +38,11 @@ body, section.html_page
     -khtml-user-select: none;
     -webkit-user-select: none;
     -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+section.html_page:not(.vertical_section)
+{
+    overflow: visible;
 }
 mainArea
 {
@@ -236,6 +250,42 @@ td#controlArea
 div#controlArea span
 {
     font-family: SH5;
+}
+/* -- PlayControl Button Color -- */
+stop#lgrad_H_c1{stop-color: #00FF00;}
+stop#lgrad_H_c2{stop-color: #004000;}
+stop#lgrad_V_c1{stop-color: #00E0E0;}
+stop#lgrad_V_c2{stop-color: #004040;}
+
+div#controlArea.vertical_mode g.horizontal_mode
+{
+    display: none;
+    /*fill-opacity: 0 !important;*/
+}
+
+div#controlArea:not(.vertical_mode) g.vertical_mode
+{
+    display: none;
+    /*fill-opacity: 0 !important;*/
+}
+
+body.repeatFrace path.repeat
+{
+    display: inline;
+}
+body:not(.repeatFrace) path.repeat
+{
+    display: none;
+}
+
+div#controlArea.vertical_mode path.play_control
+{
+    fill:url(#lgrad_V) !important;
+}
+
+div#controlArea:not(.vertical_mode) path.play_control
+{
+    fill:url(#lgrad_H) !important;
 }
 
 .buttonS, .buttonL, .buttonM, .buttonML, .buttonSM, .buttonLM, .buttonMR, .buttonMS
@@ -537,6 +587,10 @@ span.versionInfo
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
+    overflow-y:auto;
+    max-height:400px;
+    height:100%;
+   
 }
 th.setting
 {
@@ -612,6 +666,7 @@ th.setting
     overflow: hidden;
     padding: 0;
 }
+ 
 .rangeSlider
 {
     position:relative;
@@ -726,11 +781,21 @@ td.setting
 #optionCell
 {
     padding-top:0em;
+    padding-bottom: 2em;
+}
+#optionCell > span#dispMode
+{
+    border-bottom:1px solid #AAA;
+    padding-bottom:0.5em;
+}
+#settingArea input[type="checkbox"] + label
+{
+    display: inline-block;
+    vertical-align: top;
 }
 #optionCell > span
 {
-    border-top:1px #CCC solid;
-    padding-top:0.2em;
+    padding-top:0.5em;
     display:block;
 }
 #optionCell > span:first-child
@@ -993,6 +1058,147 @@ td.bibItem
     }
     */
 }
+/* ========================================================================== */
+@media screen and (max-width: 420px) {
+    #settingFrame
+    {
+        font-size: 14px;
+    }
+    .rangeSlider, .colorArea
+    {
+        width: 100px;
+    }
+    .stgValue
+    {
+        font-size: 14px;
+        height: 20px;
+        padding: 0px;
+        width: 52px;
+        max-width: 52px;
+    }
+    .rangeSlider, .rangeGlip, .stgButton, .colorArea
+    {
+        font-size: 14px;
+        padding: 0;
+    }
+    .stgButton
+    {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+        min-height: 28px !important;
+        max-width: 28px !important;
+        max-height: 28px !important;
+    }
+    .rangeSlider, .color_Area
+    {
+        height: 30px;
+    }
+    .rangeGlip
+    {
+        width: 28px;
+        height: 28px;
+    }
+    #color_Area
+    {
+        font-size: 10px; 
+    }
+    #bibinfoArea,#settingArea
+    {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 400px;
+    }
+}
+/*
+#optionRow
+{
+    display: none !important;
+}
+*/
+@media screen and (max-width: 420px) {
+    #settingArea
+    {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 410px;
+    }
+    #bibinfoArea
+    {
+        overflow: auto;
+        max-width: 410px;
+    }
+    .optionButtons
+    {
+        display: block;
+        text-align: right;
+    }
+    .easyCaption_label {
+        max-width: 280px;
+        white-space: normal;
+        display: inline-block;
+        text-align: left;
+        vertical-align: text-top;
+    }
+}
+@media screen and (max-width: 380px) {
+    #settingArea
+    {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 370px;
+    }
+    #bibinfoArea
+    {
+        overflow: auto;
+        max-width: 370px;
+    }
+    .optionButtons
+    {
+        display: block;
+        text-align: right;
+    }
+    .easyCaption_label {max-width: 250px;}
+}
+@media screen and (max-width: 370px) {
+    #settingArea
+    {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 360px;
+    }
+    #bibinfoArea
+    {
+        overflow: auto;
+        max-width: 360px;
+    }
+    .optionButtons
+    {
+        display: block;
+        text-align: right;
+    }
+    .easyCaption_label {max-width: 220px;}
+}
+@media screen and (max-width: 360px) {
+    #settingArea
+    {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 350px;
+    }
+    #bibinfoArea
+    {
+        overflow: auto;
+        max-width: 350px;
+    }
+    .optionButtons
+    {
+        display: block;
+        text-align: right;
+    }
+    .easyCaption_label {max-width: 200px;}
+}
+
 /* ========================================================================== */
 div.contentArea
 {
@@ -1647,11 +1853,23 @@ div.contentArea *.sh5index
 {
     line-height:1.5em;
 }
+
 div.contentArea *.boxstyle
 {
     display:inline;
 	white-space:pre-wrap;
+    border:solid 1px currentColor !important;
 }
+
+section.vertical_section *.boxstyle.include_ruby
+{
+    padding:0.1em 0.8em 0.1em 0.1em !important;
+}
+section:not(.vertical_section) *.boxstyle.include_ruby
+{
+    padding:0.8em 0.1em 0.1em 0.1em !important;
+}
+
 /* ----------------------------------------
   横書のアンダーライン
 ------------------------------------------- */
@@ -1899,6 +2117,10 @@ span.labelLB ruby
 {
     line-height:1em !important;
 }
+span.labelLB > span.read
+{
+    line-height: 1em !important;
+}
 /* - - - - */
 span.labelHide
 {
@@ -2001,6 +2223,11 @@ span.layer_group.layer_group_vertical:not(.layer_type2) > span.read
     position:relative;
 }
 
+.layer_group, .layer_child
+{
+    line-height:1em !important;
+}
+
 table.matharray
 {
     writing-mode: lr-tb;
@@ -2038,7 +2265,7 @@ ol#ruby_level_menu_list
 li.ruby_level_menu_list_item
 {
     white-space:nowrap;
-    font-family:'Meiryo UI';
+    font-family:'UD デジタル 教科書体 NP-R','ＭＳ Ｐゴシック','Hiragino Kaku Gothic Pro',sans-serif;
     font-size:16px;
     display:block;
     text-align:left;
@@ -2058,12 +2285,12 @@ li.ruby_level_menu_list_item:hover
     background: linear-gradient(#AFF 10%, #8DD 15%, #8DD 85%, #6AA 100%);
 }
 
-div.SmartPhoneStyle > div > div.toolButtonGroup
+div.SmartPhoneStyle > div div.toolButtonGroup
 {
     margin-right:1px !important;
 }
 
-div.SmartPhoneStyle > div > div > span.toolButton
+div.SmartPhoneStyle > div div > span.toolButton
 {
     width:32px;
     height:32px;
@@ -2456,6 +2683,10 @@ div.sh5content span.wbrspan
 {
     display:inherit;
 }
+div.sh5content span.wbrspan ruby
+{
+    white-space:nowrap;
+}
 
 table.infty
 {
@@ -2465,4 +2696,312 @@ table.infty
 div.sh5content section.vertical_section svg.math
 {
     vertical-align: baseline !important;
+}
+
+/* ===================================================================== */
+div.sh5content table.infty
+{
+	display:inline-table;
+	border:0px;
+	margin-top:5px;
+	margin-bottom:0px;
+	border:solid 1px currentColor;
+	border-right:none;
+	border-bottom:none;
+	border-collapse:collapse;
+	border-spacing:0px;
+}
+div.sh5content th.infty, div.sh5content td.infty
+{
+	border-color:currentColor;
+	border-width:1px;
+	border-style:solid;
+	padding:0.2em 0.5em;
+	white-space:normal;
+	border-top:none;
+	border-left:none;
+	white-space:nowrap;
+	vertical-align:middle;
+}
+div.sh5content table.eqnarray
+{
+	writing-mode: horizontal-tb;
+	line-height:1em;
+	display:inline-table;
+	border:none;
+	padding:0;
+}
+div.sh5content td.eqnarray
+{
+	padding:0;
+	border:none;
+	white-space:nowrap;
+}
+div.sh5content td.equationnumbers
+{
+	padding:0;
+	border:none;
+	width:6em;
+	text-align:right;
+	font-size:12pt;
+	white-space:nowrap;
+}
+div.sh5content span.boxstyle
+{
+	display:inline;
+	border:solid 1px currentColor;
+	padding:0.1em 0.4em;
+	margin:0.1em;
+}
+div.sh5content section:not(.vertical_section) span.boxstyle.ruby_in_box
+{
+    padding:0.8em 0.2em 0.2em 0.2em !important;
+}
+div.sh5content section.vertical_section span.boxstyle.ruby_in_box
+{
+    padding:0.2em 0.8em 0.2em 0.2em !important;
+}
+
+#ppf_value,#pps_value
+{
+    font-family:'UD デジタル 教科書体 NP-R','ＭＳ Ｐゴシック','Hiragino Kaku Gothic Pro',sans-serif;
+    text-align:center;
+}
+
+.audio_only_item_area
+{
+    position:relative;
+}
+
+.audio_only_item_area > span
+{
+    position:absolute;
+    left:0;
+    top:0;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+body > div#waitingArea
+{
+    display: none;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.0);
+    user-select:none;
+    -webkit-user-select:none;
+    z-index:999;
+    cursor: wait;
+}
+body > div#waitingArea.show
+{
+    display: block;
+}
+
+body > div#waitingArea.show > #waiting_circle
+{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	top: 50%;
+	user-select: none;
+	-webkit-user-select: none;
+	animation: rotate1 1.0s steps(8) 0s infinite;
+}
+@keyframes rotate1
+{
+	0%
+    {
+		transform: translateY(-50%) translateX(-50%) rotate(0deg);
+	}
+	100%
+    {
+		transform: translateY(-50%) translateX(-50%) rotate(360deg);
+	}
+}
+body > div#waitingArea.show > #waiting_circle path.wcpt
+{
+    stroke: none;
+    fill:black;
+}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc01{fill:#FFF;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc02{fill:#DDD;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc03{fill:#BBB;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc04{fill:#999;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc05{fill:#777;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc06{fill:#555;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc07{fill:#333;fill-opacity: 1.0;}
+body > div#waitingArea.show > #waiting_circle path.wcpt.wc08{fill:#000;fill-opacity: 1.0;}
+body > div#waitingArea.show > #loading_rate
+{
+	position: absolute;
+	display: block;
+	width: 80px;
+	font-size: 16pt;
+    font-weight: bold;
+	height: 1.2em;
+	left: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	text-align: center;
+	color:rgba(0,0,0,0.8);
+	white-space: nowrap;
+	user-select: none;
+    text-shadow: 0px 0px 4px #FFFFFF, 0px 0px 3px #FFFFFF, 0px 0px 2px #FFFFFF;
+	-webkit-user-select: none;
+}
+#dumpArea
+{
+    background:rgba(192,255,192,0.7);
+    display:inline-block;
+    border:1px solid black;
+    position:absolute;
+    width:350px;
+    height:350px;
+    overflow:auto;
+    z-index:998;
+    font-size:8pt;
+    text-align:left;
+    box-shadow:rgba(0,0,0,0.25) 0px 0px 6px 4px;
+    padding-top:44px;
+}
+
+body:not(.dw_right_bottom) #dumpArea
+{
+    left:50%;
+    top:50%;
+    transform:translateY(-50%) translateX(-50%);
+}
+body.dw_right_bottom #dumpArea
+{
+    right:10px;
+    bottom:10px;
+}
+
+#dumpArea audio
+{
+    display: block;
+    border: 1px solid black;
+    position: absolute;
+    left: 0 !important; 
+    top: 0 !important; 
+    width: 100%; 
+    height: 20px; 
+}
+
+#audio_dump
+{
+    background: rgba(192, 255, 255, 0.7);
+    display: block;
+    border: 1px solid black;
+    position: absolute;
+    left: 0; 
+    top: 20px; 
+    width: 100%; 
+    height: 16px; 
+    overflow: hidden; 
+    font-size: 12pt; 
+    text-align: center; 
+}
+/*
+body[mode=play] #button_play
+{
+    display: none;
+}
+body:not([mode=play]) #button_pause
+{
+    display: none;
+}
+*/
+body.mode_play #button_play
+{
+    display: none;
+}
+body:not(.mode_play) #button_pause
+{
+    display: none;
+}
+
+body[audio_loading=true] #controlArea svg
+{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+/*==== 分かち書きのスタイル設定 2021.09.11 =============*/
+
+/* [分かち書きＯＦＦ]のボタンの色 */
+body:not(.wakachigaki):not(.wakachigaki_level2) svg#waka_mode path#w_fore
+{
+    fill:#808080;
+}
+/* [分かち書きＯＮ]のボタンの色 */
+body.wakachigaki:not(.wakachigaki_level2) svg#waka_mode path#w_fore
+{
+    fill:#006000;
+}
+/* [連文節区切りの分かち書きＯＮ]のボタンの色 */
+body.wakachigaki.wakachigaki_level2 svg#waka_mode path#w_fore
+{
+    fill:#A00000;
+}
+
+#sh5content p
+{
+    white-space:normal;
+}
+
+/* -- 分かち書き表示ON ------ */
+body.wakachigaki #sh5content span.wbrspan
+{
+    display:unset;
+    white-space:nowrap;
+}
+/* -- 横書きでの[通常の分かち書き]と[連文節モードでの分かち書き表示] ------ */
+body.wakachigaki:not(.wakachigaki_level2) #sh5content section:not(.vertical_section) span.wbrspan:not(.read_last_wbr),
+body.wakachigaki.wakachigaki_level2 #sh5content section:not(.vertical_section) span.wbrspan.wbr_level2:not(.read_last_wbr)
+{
+    margin-right:1em;
+}
+/* -- 縦書きでの[通常の分かち書き]と[連文節モードでの分かち書き表示] ------ */
+body.wakachigaki:not(.wakachigaki_level2) #sh5content section.vertical_section span.wbrspan:not(.read_last_wbr),
+body.wakachigaki.wakachigaki_level2 #sh5content section.vertical_section span.wbrspan.wbr_level2:not(.read_last_wbr)
+{
+    margin-bottom:1em;
+}
+/* -- 分かち書きＯＦＦでの表示 -------- */
+body:not(.wakachigaki) #sh5content span.wbrspan
+{
+    display:unset;
+    padding:0;
+    margin:0;
+    white-space:break-spaces;
+}
+
+/* wbrデバッグモード */
+/* 枠線を表示 */
+body.wbr_debug_mode span.wbrspan
+{
+    border-style: dotted;
+    border-width: 0.5px;
+}
+/* 通常の分かち書きのデバッグ表示 */
+body.wbr_debug_mode span.wbrspan:not(.read_last_wbr):after
+{
+    content: '■';
+    color:#FFC0C0 !important;
+}
+/* 連文節の分かち書きのデバッグ表示 */
+body.wbr_debug_mode span.wbrspan.wbr_level2::after
+{
+    content: '■';
+    color:red !important;
 }
