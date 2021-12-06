@@ -8,7 +8,7 @@
     space:   { type: "range",  min:  0, max: 20, defval:  2, rate: 0.1, opt: "" },
     color:   { type: "select", min:  0, max:  4, defval:  0 }
 };
-var cUserSetting = {volume: 10,font: 12,speed: 10, interval:0, line: 26,space: 2,color: 0 };
+var cUserSetting = {volume: 10,font: 12,speed: 10, interval:0, line: 20,space: 2,color: 0, readmode:0  };
 var dAreaBottomLimit = 0.95 ; // ハイライトがコンテンツ領域の下端のこの位置に到達したらスクロールする
 var dAreaRightLimit  = 0.95 ;
 var dAreaScrollPos   = 0.25 ; // ハイライト範囲をスクロールする場合にこの位置まで移動する

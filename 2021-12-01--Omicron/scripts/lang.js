@@ -1,4 +1,4 @@
-﻿// Lastupdate 2020.09.11
+﻿// Lastupdate 2019.08.24
 var strNoSupport = "このコンテンツは、このブラウザで表示することが出来ません。<br><a href='http://windows.microsoft.com/ja-jp/internet-explorer/download-ie'>IE9</a>以上/<a href='http://www.google.com/intl/ja/chrome/'>Google Crome</a>/<a href='http://www.apple.com/jp/safari/'>Safari</a>でご覧ください。" ;
 var strLoadMessage = "<span style='font-size:150%;'>「$TITLE$」</span><br>読み込み中...<br/>しばらくお待ちください"
 var strLayoutEditModeSaveMessage = "レイアウトが変更されています。保存しますか？" ;
@@ -42,7 +42,8 @@ var sControlCaptions =
 	speed2:				{ normal:"普通",			easy:"ふつう",				description:"音声の再生速度を普通に戻します。"},
 	speed3:				{ normal:"速く",			easy:"はやく",				description:"音声の再生速度を速くします。"},
     //---------------------------
-    waka_mode:          {normal:'分かち書き',       easy:"わかちがき",           description:"分かち書きの表示を切り替えます。\n　灰＝表示オフ\n　緑＝表示オン\n　赤＝連文節区切り表示"},
+    waka_on:			{normal:"分かち書き表示",	easy:"わかちがきオン",		description:"分かち書き(全角スペース)を表示します。"},
+    waka_off:			{normal:"分かち書き非表示",	easy:"わかちがきオフ",		description:"分かち書き(全角スペース)を表示しません。"},
     //---------------------------
     colorCh:			{ normal:"色変更",			easy:"いろをかえる",		  description:"コンテンツの表示色を変更します。"},
 	markerPen:			{ normal:"マーカーペン",	easy:"まーかー",			  description:"ナーカーペンを使ってコンテンツに印をつけます。"},
@@ -63,18 +64,13 @@ var sControlCaptions =
     rubylevelN:         { normal:"ルビなし",		easy:"るびなし",              description:"全てのルビを表示しません。"},
     layoutedit:			{ normal:"レイアウト編集",	easy:"レイアウトへんしゅう",  description:"再生を停止して、レイアウト編集画面表示に切り替えます。"},
     //---------------------------
-    otherSettings:      { normal: "その他", description: "その他の設定" },
-    easyCaption:        { normal: "簡単説明", easy: "かんたんせつめい", description: "ツールボタンの説明を簡単な説明にする" },
-    swapArrowKeys:      { normal:"縦書きで左右キーを入れ替える",description:"縦書きモードのときに左右キーの操作を逆にする"},
-    prevKeyRepeat:      { normal:"[←]キーでフレーズの先頭から再生",description:'[←]キーでフレーズの先頭から再生する'},
-	repeatFrace:		{ normal:"フレーズの先頭から再開する",description:"フレーズの先頭から再生を再開する"},
-    AdjustStartFaster:  { normal:"再生が遅いときに調整する",description:"フレーズの先頭が欠けて再生される場合"},
+    easyCaption: { normal: "簡単説明", easy: "かんたんせつめい", description: "ツールボタンの説明を簡単な説明に切り替えます。" },
     //---------------------------
-	scrollMode:			{ normal:"スクロールで音声停止",	easy:"スクロールモード",	description:"画面をスクロールしたときに再生を停止する"},
+	scrollMode:			{ normal:"スクロールで音声停止",	easy:"スクロールモード",	description:"スクロールしたときの音声の動作を設定します。"},
 	scrollMode1:		{ normal:"する",	description:"スクロールしたときに音声を停止します。"},
 	scrollMode2:		{ normal:"しない",	description:"スクロールしたときに音声を停止しません。"},
     //---------------------------
-	resumeMode:			{ normal:"前回の場所から読み上げを再開する",	easy:"読み上げ再開モード",	description:"前回コンテンツを閉じた場所から再開する"},
+	resumeMode:			{ normal:"前回の場所から読み上げを再開する",	easy:"読み上げ再開モード",	description:"前回コンテンツを閉じた場所から読み上げを再開します。"},
 	resumeMode1:		{ normal:"する",	description:"前回の場所から読み上げを再開します。"},
 	resumeMode2:		{ normal:"しない",	description:"最初のページを表示して、読み上げは開始しません。"},
 
@@ -120,10 +116,10 @@ var ShortcutKeys =
     stop:		{ key:"Space", ctrl:true },
     play:		{ key:"Space"},
     pause:		{ key:"Space"},
-    prev:		{ key:"←", ctrl:false },
-    next:		{ key:"→", ctrl:false },
-    up:			{ key:"↑", ctrl:false },
-    down:		{ key:"↓", ctrl:false },
+    prev:		{ key:"←", ctrl:true },
+    next:		{ key:"→", ctrl:true },
+    up:			{ key:"↑", ctrl:true },
+    down:		{ key:"↓", ctrl:true },
     font1:		{ key:"↓", shift:true },
     font3:		{ key:"↑", shift:true },
 	speed1:		{ key:"←", shift:true },
@@ -135,7 +131,6 @@ var ShortcutKeys =
     layoutedit:	{ key:"E" },
 	waka_on:	{ key:"W" },
 	waka_off:	{ key:"W" },
-    waka_mode:	{ key:"W" },
 	linemode1:	{ key:"L" },
 	linemode2:	{ key:"L" },
 	linemode3:	{ key:"L" },
@@ -177,7 +172,7 @@ var sPanelFooters =
     mobile: "周りをタップするとこの画面を閉じます。"
 } ;
 
-var sSettinInfo = "<div style='font-size:70%;text-align:left;line-height:1em;margin-left:30px;'>【キー操作】<br/>[↑][↓]キーで項目を選択して、[←][→]キーで値を調整します。<br/>チェックボックスはスペースキーでオン・オフを切り替えます。<br/><span id='setting_reset_comment'>[Enter]でリセット(初期設定)になります。</span><br/></div>" ;
+var sSettinInfo = "<div style='font-size:70%;text-align:left;line-height:1em;margin-left:30px;'>【キー操作】<br/>[↑][↓]キーで項目を選択して、[←][→]キーで値を調整します。<br/><span id='setting_reset_comment'>[Enter]でリセット(初期設定)になります。</span><br/></div>" ;
 
 var sSettingLabels =
 {

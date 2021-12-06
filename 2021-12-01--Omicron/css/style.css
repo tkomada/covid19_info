@@ -1,8 +1,8 @@
-﻿div.sh5content section.html_page
+﻿div.sh5content section.html_page section.html_page
 {
 	font-size:100%;
 	line-height:260%;
-	font-family:'UD デジタル 教科書体 NP-R','ＭＳ Ｐゴシック','Hiragino Kaku Gothic Pro', sans-serif;
+	font-family:'UD デジタル 教科書体 NP-R','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro',Osaka;
 }
 div.sh5content section.html_page a
 {
@@ -16,7 +16,7 @@ div.sh5content section.html_page a img
 }
 div.sh5content section.html_page span.ja
 {
-	font-family:'UD デジタル 教科書体 NP-R','ＭＳ Ｐゴシック','Hiragino Kaku Gothic Pro', sans-serif;
+	font-family:'UD デジタル 教科書体 NP-R','ＭＳ ゴシック','Hiragino Kaku Gothic ProN','Hiragino Kaku Gothic Pro',Osaka;
 }
 div.sh5content section.html_page table, div.sh5content section.html_page table > tbody > tr > td
 {
@@ -137,47 +137,13 @@ div.sh5content section.html_page span.boxstyle
 	padding:3px 3px;
 	margin:2px 2px;
 }
-div.sh5content section.html_page span.boxstyle.bs_double
-{
-	border-style:double !important;
-	border-width:unset !important;
-}
-
-/* GROUP START */
-@media all and (-ms-high-contrast: none)
-{
-	div.sh5content span.boxstyle.bs_double
-	{
-		border-style:double !important;
-		border-width:3px !important;
-	}
-}
-/* GROUP END */
-
-div.sh5content section.html_page span.boxstyle.bs_round
-{
-	border-radius:0.4em !important;
-}
-div.sh5content section.html_page span.boxstyle.bs_bround
-{
-	border-radius:0.4em !important;
-	border-width:2px !important;
-}
-div.sh5content section.html_page span.boxstyle.bs_shadow
-{
-	border-width:1px 3px 3px 1px !important;
-}
-div.sh5content section.html_page span.boxstyle.bs_circle
-{
-	border-radius:1em !important;
-}
 div.sh5content section.html_page *:not(.vertical_section) *.ruby_in_box
 {
 	padding-top:0.8em;
 }
 div.sh5content section.html_page span.allspaces
 {
-	font-family:'UD デジタル 教科書体 NP-R','ＭＳ Ｐゴシック','Hiragino Kaku Gothic Pro', sans-serif;
+	font-family:'UD デジタル 教科書体 NP-R','ＭＳ ゴシック';
 }
 div.sh5content section.html_page table.infty
 {
@@ -239,7 +205,7 @@ div.sh5content section.html_page table.eqnarray
 }
 div.sh5content section.html_page td.eqnarray
 {
-	padding:0.25em 0;
+	padding:0;
 	border:none;
 	white-space:nowrap;
 	border-top-style:solid;
@@ -425,8 +391,4 @@ div.sh5content section.html_page span.word_block
 {
 	white-space:nowrap;
 	display:inline-block;
-}
-div.sh5content section.html_page *.hide_title
-{
-	display:none;
 }
