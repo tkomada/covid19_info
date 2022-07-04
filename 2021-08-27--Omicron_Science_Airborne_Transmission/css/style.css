@@ -1,0 +1,384 @@
+﻿div.sh5content section.html_page
+{
+	font-size:100%;
+	line-height:260%;
+	font-family:arial, helvetica, verdana, sans-serif;
+}
+div.sh5content section.html_page a
+{
+	text-decoration:none;
+	color:currentColor;
+}
+div.sh5content section.html_page a img
+{
+	text-decoration:none;
+	border-style:none;
+}
+div.sh5content section.html_page span.ja
+{
+	font-family:arial, helvetica, verdana, sans-serif;
+}
+div.sh5content section.html_page table, div.sh5content section.html_page table > tbody > tr > td
+{
+	font-size:100%;
+}
+div.sh5content section.html_page h1
+{
+	margin-top:20px;
+	line-height:260%;
+	clear:both;
+	font-size:160%;
+}
+div.sh5content section.html_page h2
+{
+	margin-top:10px;
+	line-height:260%;
+	clear:both;
+	font-size:140%;
+}
+div.sh5content section.html_page h3
+{
+	margin-top:10px;
+	line-height:260%;
+	clear:both;
+	font-size:120%;
+}
+div.sh5content section.html_page h4
+{
+	margin-top:10px;
+	line-height:260%;
+	clear:both;
+	font-size:110%;
+}
+div.sh5content section.html_page h5
+{
+	margin-top:10px;
+	line-height:260%;
+	clear:both;
+	font-size:100%;
+}
+div.sh5content section.html_page h6
+{
+	margin-top:10px;
+	line-height:260%;
+	clear:both;
+	font-size:100%;
+}
+div.sh5content section.html_page p
+{
+	margin-top:0.6em;
+	margin-bottom:0.6em;
+	line-break:strict;
+	clear:both;
+	word-break:break-word;
+}
+div.sh5content section.html_page ruby
+{
+	line-height:1.5;
+	background-color:inherit;
+}
+div.sh5content section.html_page rb, div.sh5content section.html_page rt
+{
+	background-color:inherit;
+}
+div.sh5content section.html_page rt
+{
+	font-size:60%;
+	font-style:normal;
+}
+div.sh5content section.html_page span.box
+{
+	border:solid 1pt currentColor;
+}
+div.sh5content section.html_page img.math
+{
+	vertical-align:middle;
+	margin:0;
+	padding:0;
+	border:none;
+}
+div.sh5content section.html_page img.math_h
+{
+	vertical-align:top;
+	margin:0;
+	padding:0;
+	border:none;
+}
+div.sh5content section.html_page img.image
+{
+	padding:4px;
+	background-color:inherit;
+}
+div.sh5content section.html_page img.imageLeft
+{
+	float:left;
+	margin-right:0.5em;
+}
+div.sh5content section.html_page img.imageRight
+{
+	float:right;
+	margin-left:0.5em;
+}
+div.sh5content section.html_page img.imageTextTop
+{
+	vertical-align:text-top;
+}
+div.sh5content section.html_page img.imageMiddle
+{
+	vertical-align:middle;
+}
+div.sh5content section.html_page img.imageBottom
+{
+	vertical-align:bottom;
+}
+div.sh5content section.html_page span.boxstyle
+{
+	border:solid currentColor 1px;
+	padding:3px 3px;
+	margin:2px 2px;
+}
+div.sh5content section.html_page span.allspaces
+{
+	font-family:arial, helvetica, verdana, sans-serif;
+}
+div.sh5content section.html_page table.infty
+{
+	border-collapse:collapse;
+	border:0px;
+	margin-top:5px;
+	margin-bottom:0px;
+	border:none;
+	display:inline-table;
+	font-size:100%;
+	vertical-align:middle;
+}
+div.sh5content section.html_page table.infty > tbody > tr > th, div.sh5content section.html_page table.infty > tbody > tr > td
+{
+	font-size:100%;
+	border:solid currentColor 1px;
+	padding:0.2em 0.5em;
+	white-space:nowrap;
+	line-height:1.5;
+	vertical-align:inherit;
+}
+div.sh5content section.html_page table.infty p
+{
+	margin:0;
+	padding:0;
+	white-space:nowrap !important;
+}
+div.sh5content section.html_page table.infty > tbody > tr > th > span:not(.read), div.sh5content section.html_page table.infty > tbody > tr > td > span:not(.read), div.sh5content section.html_page table.infty > tbody > tr > th > p > span:not(.read), div.sh5content section.html_page table.infty > tbody > tr > td > p > span:not(.read)
+{
+	white-space:nowrap;
+}
+div.sh5content section.html_page table.infty > tbody > tr > td ruby
+{
+	line-height:2em !important;
+}
+div.sh5content section.html_page table.infty span.table_last_cell, div.sh5content section.html_page table.infty span.blank_item
+{
+	display:inline-block;
+	white-space:nowrap;
+	overflow:hidden;
+	width:1px;
+	height:1px;
+	margin:0;
+	padding:0;
+	opacity:0;
+}
+div.sh5content section.html_page div.eqnarray
+{
+	vertical-align:top;
+	display:block;
+}
+div.sh5content section.html_page table.eqnarray
+{
+	border:none;
+	padding:0;
+	margin:0;
+	display:inline-table;
+	vertical-align:top;
+}
+div.sh5content section.html_page td.eqnarray
+{
+	padding:0;
+	border:none;
+	white-space:nowrap;
+	border-top-style:solid;
+	border-top-width:0.35em;
+	border-top-color:transparent;
+	vertical-align:middle;
+}
+div.sh5content section.html_page table.eqnarray tr:first-child td.eqnarray
+{
+	border-top-width:0;
+	border-top-style:none;
+}
+div.sh5content section.html_page td.equationnumbers
+{
+	padding:0;
+	border:none;
+	width:6em;
+	text-align:right;
+	font-size:12pt;
+	white-space:nowrap;
+}
+div.sh5content section.html_page u
+{
+	text-decoration:none;
+	border-bottom:solid 1px currentColor;
+}
+div.sh5content section.html_page u > span.underline
+{
+	display:inline-block;
+}
+div.sh5content section.html_page p.matharray
+{
+	display:inline;
+}
+div.sh5content section.html_page div.matharray
+{
+	display:inline-block;
+	vertical-align:middle;
+}
+div.sh5content section.html_page table.matharray
+{
+	display:inline-table;
+	margin:0.25em 0;
+	vertical-align:middle;
+	border-collapse:collapse;
+	border:solid 1px transparent;
+	background-color:transparent;
+}
+div.sh5content section.html_page table.matharray td
+{
+	white-space:nowrap;
+	text-align:center;
+	vertical-align:middle;
+	padding-top:0;
+	padding-bottom:0;
+	padding-right:0;
+	line-height:0.5em;
+	border:none 1px transparent;
+	background-color:transparent;
+}
+div.sh5content section.html_page table.matharray td span:not(.read)
+{
+	padding:0;
+	margin:0;
+}
+div.sh5content section.html_page .matharrayleft
+{
+	text-align:left !important;
+	padding-left:0;
+}
+div.sh5content section.html_page .matharraybegin, div.sh5content section.html_page .matharrayend
+{
+	margin:0;
+	padding:0;
+}
+div.sh5content section.html_page table.matharray td.matharraymiddle, div.sh5content section.html_page table.matharray td.matharrayright
+{
+	padding-left:1.5em;
+}
+div.sh5content section.html_page table[class=matharray] td
+{
+	text-align:left;
+}
+div.sh5content section.html_page table[class=matharray] td svg.math
+{
+	margin:0;
+	padding:0.25em 0;
+}
+div.sh5content section.html_page table.eqnarray, div.sh5content section.html_page table.eqnarray *, div.sh5content section.html_page table.matharray, div.sh5content section.html_page table.matharray *, div.sh5content section.html_page table.hissan, div.sh5content section.html_page table.hissan *
+{
+	border-style:none;
+}
+div.sh5content section.html_page table.hissan td, div.sh5content section.html_page table.division td
+{
+	margin:0;
+	padding:0;
+	text-indent:0;
+	line-height:1.2em;
+}
+div.sh5content section.html_page table.hissan td
+{
+	text-align:right !important;
+}
+div.sh5content section.html_page table.division td
+{
+	text-align:left;
+	border-style:none;
+	border-width:1px;
+	border-color:transparent;
+}
+div.sh5content section.html_page table.hissan td span.msp, div.sh5content section.html_page table.division td span.msp, div.sh5content section.html_page table.division td span.math_single
+{
+	padding:0;
+}
+div.sh5content section.html_page table.hissan .hissan_operator
+{
+	vertical-align:bottom;
+	padding-right:0pt;
+}
+div.sh5content section.html_page table.hissan td.hissan_operator, div.sh5content section.html_page table.hissan td.hissan_baseline
+{
+	border-bottom:solid 1px currentColor !important;
+}
+div.sh5content section.html_page table.hissan td.hissan_step
+{
+	border-top:solid 1px currentColor !important;
+}
+div.sh5content section.html_page table.matharray td span:not(.read), div.sh5content section.html_page table.eqnarray td span:not(.read), div.sh5content section.html_page table.hissan td span:not(.read)
+{
+	line-height:1.3em !important;
+}
+div.sh5content section.html_page fieldset.inftyGroup, div.sh5content section.html_page div.inftyGroup
+{
+	padding:0 1.5em;
+}
+div.sh5content section.html_page fieldset.inftyGroup > legend
+{
+	padding:0 0.25em;
+}
+div.sh5content section.html_page fieldset.inftyGroup > p:nth-of-type(1)
+{
+	margin-top:0em;
+}
+div.sh5content section.html_page dl.infty_dl > dt
+{
+	font-weight:normal;
+	margin:0 0 0 0.5em;
+	padding:0;
+	float:left;
+}
+div.sh5content section.html_page dl.infty_dl > dd
+{
+	margin-bottom:0.5em;
+}
+div.sh5content section.html_page table.infty_itemize_list
+{
+	border:none !important;
+	border-collapse:collapse;
+	margin:0;
+	padding:0;
+}
+div.sh5content section.html_page td.infty_itemize_item
+{
+	border:none !important;
+	vertical-align:text-top;
+	padding-right:1.2em;
+	padding-bottom:0em;
+	white-space:nowrap;
+}
+div.sh5content section.html_page td.infty_itemize_text
+{
+	border:none !important;
+	vertical-align:text-top;
+	padding-right:0em;
+	padding-bottom:1em;
+}
+div.sh5content section.html_page span.wbrspan
+{
+	display:inherit;
+}
